@@ -33,5 +33,10 @@ module VirtualFitnessRoom
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.autoload_paths += Dir[Rails.root.join('app', 'jobs', '**/')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '**/')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'mailers', '**/')]
+
   end
 end
