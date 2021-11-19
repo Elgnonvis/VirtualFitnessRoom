@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <%= link_to "Utilisateurs", userall_path, class:"btn btn-secondary ms-4 w-75" %>
                 </li>
+                <li class="nav-item">
+                    <a href="<%= rails_admin_path %>" class="btn btn-info ml-2 " role="button">Management</a>
+                </li>
                 <% if user_signed_in?  && current_user.admin %> 
                     <li class="nav-item">
                         <%= link_to "Mon profile", profil_path, class:"btn btn-secondary ms-4 w-75" %>

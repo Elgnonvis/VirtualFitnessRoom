@@ -22,6 +22,7 @@ gem 'simple_form', '~> 5.1' # https://github.com/heartcombo/simple_form
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster
 gem 'devise-i18n' # https://github.com/tigrish/devise-i18n
 gem 'devise-bootstrap-views', '~> 1.1'
+gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 
 
 

@@ -69,7 +69,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = { :host => '.herokuapp.com' }  
+  config.action_mailer.default_url_options = { :host => 'virtual-fitness-room.herokuapp.com' }  
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true  
   config.action_mailer.raise_delivery_errors = false  
@@ -77,7 +77,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               '.herokuapp.com',
+    domain:               'virtual-fitness-room.herokuapp.com',
     user_name:            ENV["GMAIL_EMAIL"],
     password:             ENV["GMAIL_PASSWORD"],
     authentication:       'plain',
