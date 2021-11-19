@@ -1,0 +1,6 @@
+<div class="d-flex flex-column justify-content-center container-fluid align-items-center w-100 mt-5 ">
+    <h1>Editing Programme</h1>
+    <%= render 'form', programme: @programme %>
+    <%= link_to 'Show', @programme %> |
+    <a href = "<%= programmes_path %>" class="btn btn-secondary mb-1 w-100"><%= t("button.back") %></a>
+</div>

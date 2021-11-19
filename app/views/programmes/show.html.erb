@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Programme name:</strong>
+  <%= @programme.programme_name %>
+</p>
+
+<p>
+  <strong>Programme cost:</strong>
+  <%= @programme.programme_cost %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @programme.user_id %>
+</p>
+
+<p>
+  <strong>Programme goal:</strong>
+  <%= @programme.programme_goal %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <%= @programme.images %>
+</p>
+
+<p>
+  <strong>Programme duration:</strong>
+  <%= @programme.programme_duration %>
+</p>
+
+<p>
+  <strong>Payed:</strong>
+  <%= @programme.payed %>
+</p>
+
+<%= link_to 'Edit', edit_programme_path(@programme) %> |
+<%= link_to 'Back', programmes_path %>

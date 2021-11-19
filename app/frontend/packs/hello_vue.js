@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#hello',
     data: {
        message: "Can you say hello?"
-      },
-      components: { App }
+      }
+      // ,
+      // components: { App }
   })
   // .$mount()
   // document.body.appendChild(app.$el)

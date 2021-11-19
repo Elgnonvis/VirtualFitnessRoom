@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_12_144012) do
+ActiveRecord::Schema.define(version: 2021_11_18_151120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "programmes", force: :cascade do |t|
+    t.string "programme_name"
+    t.integer "programme_cost"
+    t.bigint "user_id", null: false
+    t.text "programme_goal"
+    t.string "images", default: [], array: true
+    t.integer "programme_duration"
+    t.boolean "payed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_programmes_on_user_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "programme_id", null: false
+    t.string "session_title"
+    t.integer "session_duration"
+    t.text "session_description"
+    t.text "session_goals"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["programme_id"], name: "index_sessions_on_programme_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -62,4 +88,7 @@ ActiveRecord::Schema.define(version: 2021_11_12_144012) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "programmes", "users"
+  add_foreign_key "sessions", "programmes"
+  add_foreign_key "sessions", "users"
 end

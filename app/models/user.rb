@@ -1,7 +1,14 @@
 class User < ApplicationRecord
+  has_many :programmes, dependent: :destroy
+  has_many :sessions, dependent: :destroy
+
   attr_accessor :login
-  validates :username, presence: true, uniqueness: {case_sensitive: false}, format: { with: /\A[a-zA-Z0-9 _\.]*\z/ }
+  #validates :username, presence: true, uniqueness: {case_sensitive: false}, format: { with: /\A[a-zA-Z0-9 _\.]*\z/ }
+  validates_uniqueness_of :username
+  # validate :avatar_type
   # validates :birthday,
+  validates :gender, presence: true
+
   # :date => { :after => Time.now + 1.hour, :before => Time.now + 1.year }
 
   # Include default devise modules. Others available are:
@@ -25,4 +32,13 @@ class User < ApplicationRecord
   def destroy
     update_attributes(desactivated: true) unless desactivated
   end
+
+  private
+
+  # def avatar_type
+  #   avatar.each do |image|
+  #     if !image.content_type.in?(%('image/jpeg image/png '))
+  #       errors.add(:avatar, 'needs to be JPEG or PNG')
+  #     end
+  # end
 end

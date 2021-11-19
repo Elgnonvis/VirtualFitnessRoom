@@ -1,0 +1,44 @@
+<br>
+<div class="container text-center mt-5 ">
+  <h1><%= t("programmes.title") %></h1>
+
+  <div class ='table-responsive'>
+    <div class=" text-end mb-2">
+      <a href = "<%= new_programme_path %>" class="btn btn-primary"><%= t("programmes.add") %></a>
+    </div>
+    <table class = "table table-striped table-hover border">
+      <thead>
+        <tr>
+          <th>N°</th>
+          <th>Name</th>
+          <th>Cost</th>
+          <th>Created by</th>
+          <th>Goals</th>
+          <th>Duration</th>
+          <th>Payed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @programmes.each do |p| %>
+          <tr>
+            <td><%= p.programme_name %></td>
+            <td><%= p.programme_name %></td>
+            <td><%= p.programme_cost %></td>
+            <td><%= p.user.username %></td>
+            <td><%= truncate(p.programme_goal, length: 15) %></td>
+            <td><%= p.programme_duration %></td>
+            <td><%= p.payed %></td>
+            <td>
+              <a href = "<%= programme_path(p.id) %>" class="btn btn-primary"><%= t("button.show") %></a>
+              <a href = "<%= edit_programme_path(p) %>" class="btn btn-warning"><%= t("button.edit") %></a>
+              <a href = "<%= programme_path(p.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE"><%= t("button.destroy") %></a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <br>

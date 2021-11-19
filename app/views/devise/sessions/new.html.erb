@@ -1,0 +1,31 @@
+<title> VirtualFitnessRoom | Connexion</title><br>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), wrapper: :input_group) do |f| %>
+<div class="row container-fluid mt-4 " >
+  <div class="col d-none d-md-block mt-2" style = "overflow: hidden; padding-left: 0 !important;" >
+    <img style = "height: 520px; " src="/inscription.jpeg" alt="">
+  </div>
+  <div class="mt-2 col-md-6 form-inputs" style = "padding-top: 1rem; border: 1px solid;">
+    <div class=" w-100 d-flex flex-column container justify-content-center align-itmes-center mb-2" >
+      <h2 class="text-center pt-2"> <i class="bi bi-brush"></i>  Log in</h2>
+      <%= f.input :login,
+                  prepend: "@",
+                  required: true,
+                  placeholder: "Mail ou nom d'utilisateur",
+                  autofocus: true,
+                  input_html: { autocomplete: "login" } %> <br>
+        <%= f.input :password,
+                    prepend: "🔑",
+                    placeholder: 'Votre mot de passe',
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %> <br>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class:"btn btn-success mt-2 w-100" %>
+      </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  
+</div> <br>

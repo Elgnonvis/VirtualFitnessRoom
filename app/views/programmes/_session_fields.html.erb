@@ -1,0 +1,24 @@
+<div class="form-inputs">
+  <hr />
+
+    <div class="d-flex">
+        <%= f.hidden_field :_destroy %>
+        <h2>Séance n° <%= f.index + 1 %> </h2>
+        <%= link_to  "Remove", "#", class: "remove-field btn btn-danger ms-5"%>
+    </div>
+
+
+    <div class="form-group mt-1 mb-3">
+        <%= f.input :session_title, required: true %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :session_description, required: true %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+        <%= f.input :session_goals, required: true %>
+    </div>
+    <div class="form-group mt-3">
+        <%= f.input :session_duration,required: true, append: "Semaine(s)", input_html: { min: 0.0 }  %> <br>
+    </div>
+
+</div>

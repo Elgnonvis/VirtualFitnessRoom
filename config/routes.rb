@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :programmes
   root 'home#index'
   devise_for :users
   get '/profil', to: 'users#show', as: :profil
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
   # resources :users, only: [:show, :index]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

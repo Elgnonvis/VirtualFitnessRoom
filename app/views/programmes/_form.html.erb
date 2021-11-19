@@ -1,0 +1,59 @@
+<title> VirtualFitnessRoom | Add Programe</title>
+<%= simple_form_for((@programme), wrapper: :input_group) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="row container-fluid" >
+  <div class="col col-md-6" >
+    <div class="form-group mb-3">
+      <%= f.input :programme_name, autofocus: true, required: true %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :programme_goal, required: true %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.file_field :images, multiple: true,  :class => 'form-control'%>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :programme_duration, append: "Semaine(s)" %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :programme_cost, append: "F CFA", required: true %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :payed %>
+    </div>
+  </div>
+  <div class="col d-none d-md-block" >
+  </div>
+  <div class="col-md-5">
+    <div class="form-group mt-1 mb-1">
+      <%= f.simple_fields_for :sessions do |s| %>
+        <%= render 'session_fields', f: s %>
+      <% end %>
+      <%= link_to_add_fields  "Add Session", f, :sessions %>
+    </div>
+  </div>
+  <div class="form-actions btn btn-success mb-1 w-100" >
+    <%= f.button :submit %>
+<% end %>
+
+  </div>
+</div>
+
+
+<script>
+  $('form').on('click', '.remove_field', function(event){
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('fieldest').hide();
+    return event.preventDefault();
+  });
+
+  $('form').on('click', '.add_fields', function(event){
+    console.log('clicked')
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+    return event.preventDefault();
+  });
+</script>

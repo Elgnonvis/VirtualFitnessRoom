@@ -9,11 +9,12 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Serveur et Middleware
 gem 'puma', '~> 5.0' # Use Puma as the app server local
 gem 'pg', '~> 1.1' # Use postgresql as the database for Active Record
-gem 'unicorn'
+gem 'unicorn' # Use Unicorn as the app server nginx for Heroku
 
 # Frontend
 gem 'webpacker', '~> 5.0' # Read more: https://github.com/rails/webpacker
 gem 'summernote-rails'
+# gem 'date_wrapper'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'sass-rails', '>= 6' # Use SCSS for stylesheets

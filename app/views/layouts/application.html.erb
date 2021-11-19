@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> VirtualFitnessRoom | Accueil</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://kit.fontawesome.com/8ccaec3aa4.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "partials/test3" %>
+     
+    <div class="container" style = "padding-top: 1rem">
+    
+      <% if notice %>
+        <p class="alert alert-success mt-5"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert alert-danger mt-5"><%= alert %></p>
+      <% end %>
+
+      <%= yield %>
+    </div>
+    
+    <%= render "partials/footer" %>
   </body>
 </html>

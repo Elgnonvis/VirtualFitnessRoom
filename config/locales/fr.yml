@@ -1,0 +1,380 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+---
+fr:
+  appointments:
+    title: "Liste des rendez-vous"
+    requested_by: "Demandez par"
+    details: "Les détails de ce rendez-vous"
+    add: "Demande de rendez-vous"
+    new: "Formulaire de demande de rendez-vous"
+    edit: "Mise à du rendez-vous"
+    created: "Demande de rendez-vous soumise avec succès"
+    destroyed: "Demande de rendez-vous annulée avec succès"
+    updated: "Demande de rendez-vous mise à jour avec succès"
+    confirmed: "Etat"
+  properties:
+    title: "Liste des propriétés"
+    add: "Ajouter une propriété"
+    by_status: "Propriété par statut"
+    by_type: "Propriété par type"
+    name: "Nom"
+    price: "Prix"
+    details: "Les détails de cette propriété"
+    posted_by: "Posté par"
+    address: "Adresse"
+    type_of_property: "Type de propriété"
+    status: "Statut"
+    created: "Propriété crée avec succès"
+    destroyed: "Propriété supprimée avec succès"
+    updated: "Propriété mise à jour avec succès"
+    edit: "Mise à jour de la propriété"
+  comments:
+    list: "Liste des commentaires"
+    content: "Contenu"
+    created: "Commentaire posté avec succès"
+    updated: "Commentaire mise à jour avec succès"
+  users:
+    details: "Les détails de mon compte"
+    username: "Nom d'utilisateur"
+    lastname: "Nom de famille"
+    firstname: "Prénoms"
+    address: "Adresse (Ville /quartier)"
+    email: "Adresse mail"
+  contact:
+    msg: "Ceci est notre formulaire de conact!"
+    name: "Votre nom"
+    send: "Envoyez le Message"
+  activerecord:
+    errors:
+      messages:
+        blank: "%{attribute} ne peut pas être vide"
+        invalid: "%{attribute} n'est pas valide"
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+    models:
+      properties: "Propriété"
+      appointment: "Rendez-vous"
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      long: "%Y-%m-%d"
+      short: "%e %b"
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi‑minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} ans"
+    prompts:
+      second: Seconde
+      minute: Minute
+      hour: Heure
+      day: Jour
+      month: Mois
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          eb: Eo
+          gb: Go
+          kb: ko
+          mb: Mo
+          pb: Po
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%Y-%m-%d %H:%M:%S"
+      # long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: pm
+    views:
+    messages:
+      create_property: 'Propriété créée avec succès!'
+      create_appointment: 'Successfully created an appointment!'
+      update_article: 'Successfully updated the article!'
+      assigned: 'Assigned!'
+      failed_to_assign: 'Assignment failed'
+      email_already_exist: 'Email already exist'
+      cannot_delete_the_leader: 'The leader cannot be deleted'
+      does_not_exist_email: 'Email does not exist. Please make an account'
+      cannot_delete_only_a_member: 'This user is only a member of this team and cannot be deleted'
+      delete_member: 'The member has been deleted'
+      cannot_delete_member_4_some_reason: 'The file could not be deleted for some reason.'
+      failed_to_post: 'Failed to post ...'
+      create_team: 'Successfully created a team!'
+      failed_to_save_team: 'Failed to save...'
+      update_team: 'Successfully updated the team!'
+      delete_team: 'The team has been deleted'
+      update_profile: 'Successfully update your profile!'
+      complete_registration: 'Registration completed'
+      edit_article: 'Edit an article'
+      input_title: 'Input a title of this article'
+      input_content: 'Input a content of this artcile'
+      create_article: 'Create an article'
+      comment_list: 'Comments'
+      post_comment: 'Post a comment'
+      initial_assign: 'Your email address has been assigned to the DIVEINTOPOST team!'
+      initial_password: 'Initial Password:'
+      author: 'Author'
+      delete_comment: 'Delete the comment'
+      edit_comment: 'Edit the comment'
+      my_page: 'My page'
+      team_build: 'Create Team'
+      team_build2: 'Create Team'
+      select_team: 'Select Team'
+      create_agenda: 'Create Agenda'
+      input_agenda_title: 'Input title'
+      input_team_name: 'Input a team name'
+      recent_posts: 'Recent Posts'
+      posted_at: ''
+      team_members: 'Team Members'
+      team_members2: 'Team Members'
+      edit_team: 'Edit Team'
+      invite_team_member: 'Invite a team member'
+      team_leader: 'Team Leader'
+      leader: 'Leader'
+      invitation_placeholder: 'Enter the email address of the person you want to invite'
+      edit_profile: 'Edit Profile'
+      team_you_belong_to: 'The team you belong to'
+      posted_articles: 'List of posted articles'
+  button:
+    submit: 'Submit'
+    edit: 'Modifier'
+    destroy: 'Supprimer'
+    show: 'Voir'
+    back: 'Retour'
+    search: 'Recherche'
+    invite: 'Invite'
+    create_comment: "Ajouter commentaire"
+    update_comment: "Mettre à jour commentaire"
+    log_out: "Se déconnecter"
+    log_in: "Se connecter"
+    sign_up: "S'inscrire"
+    my_appointments: "Mes rendez-vous"
+    appointments: "Les rendez-vous"
+
+    properties_list: "Liste des propriétés"
+    contact_us: "Nous contacter"
+    brand: "OnlineEstateAgency | Accueil"
+    admin: "Invité admin"
+    guest: "Invité simple"
+  top:
+    line1: 'it is an application to share a specific issue (agenda) easily'
+    line2: 'for each member separately for each team or agenda'
+    line3: 'If you share information with slack etc., it will happen that important information will flow'
+    line4: 'and you will not be able to pick it up, so it is an internal application to avoid it'
+  common:
+    property: 'Propriété'
+
+
+    
