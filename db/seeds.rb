@@ -8,8 +8,7 @@
 User.create(
     username: "Admin",
     gender: "Masculin",
-    email:"admin@gmail.com", 
+    email:"elgnonvis@gmail.com", 
     password:"GrandAdmin",
-    password_confirmation:"GrandAdmin", 
     admin: true
 )
