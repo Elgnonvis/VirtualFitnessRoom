@@ -7,9 +7,7 @@ ruby '3.0.2'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 
 # Serveur et Middleware
-gem 'puma', '~> 5.0' # Use Puma as the app server local
 gem 'pg', '~> 1.1' # Use postgresql as the database for Active Record
-gem 'unicorn' # Use Unicorn as the app server nginx for Heroku
 
 # Frontend
 gem 'webpacker', '~> 5.0' # Read more: https://github.com/rails/webpacker
@@ -62,6 +60,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'launchy'
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+  gem 'puma', '~> 5.0' # Use Puma as the app server local
+
 end
 
 group :development do
@@ -77,6 +77,9 @@ group :test do
   gem 'capybara', '>= 3.26' # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
   gem 'webdrivers' # Easy installation and use of web drivers to run system tests with browsers
+end
+group :production do
+  gem 'unicorn' # Use Unicorn as the app server nginx for Heroku production
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
